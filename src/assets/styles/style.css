@@ -9,3 +9,78 @@
 .test {
     color: red !important;
 }
+
+.Par{
+    font-size: 16px;
+    line-height: 26px;
+    color: #1F3F68;    
+}
+
+.h1{
+    font-size: 64px;
+    color: #1F3F68;    
+}
+
+.h2{
+    font-family: "StoreIcons";
+    font-weight: 500;
+    font-size: 44px;
+    text-align: center;    
+}
+
+.h3{
+    font-size: 36px;
+    text-align: center;    
+}
+
+.h4{
+    font-size: 20px;
+    line-height: 30px;
+    color: #1F3F68;    
+}
+
+.inp{
+    border: 1px solid #356EAD;
+    box-sizing: border-box;
+    border-radius: 10px;
+    opacity: 0.4;    
+}
+
+.but{
+    background: linear-gradient(to right, rgb(63, 88, 170), rgb(122, 97, 223));
+    border-style: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;    
+}
+
+ul.breadcrumb {
+    background: linear-gradient(to top, rgb(106, 131, 203), rgb(251, 250, 254));
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #5b4949;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 20px;
+    padding-right: 10px;
+    margin-left: 10px;
+    border-right: 3px solid black;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+ul.breadcrumb li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #076ac0;
+    text-decoration: underline;
+}

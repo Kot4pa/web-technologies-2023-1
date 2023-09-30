@@ -21,3 +21,10 @@
          url("/static/fonts/Inter-Regular.woff2") format("woff");
     font-weight: 400;
 }
+
+@font-face {
+    font-family: "StoreIcons";
+    src: url("/static/fonts/StoreIcons.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
