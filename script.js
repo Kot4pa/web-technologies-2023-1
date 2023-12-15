@@ -100,37 +100,32 @@ function init() {
             //если hasChildren, то запускаем renderParent
             //если !hasChildren, то запускаем renderChildren
             //возвращает рендер родительского элемента
-            let span = '<span>' + data.name + '</span>';
-            let elParent = '<div class="list-item list-item_open" data-parent><div class="list-item__inner">';
-            elParent += '<img class="list-item__arrow" src="img/chevron-down.png" alt="chevron-down" data-open>' +
-                '<img class="list-item__folder" src="img/folder.png" alt="folder">' + span + '</div>' +
-            '<div class="list-item__items">';
+            let parent = '<div class="list-item list-item_open" data-parent>'+
+                '<div class="list-item__inner">'+
+                '<img class="list-item__arrow" src="img/chevron-down.png" alt="chevron-down" data-open>' +
+                '<img class="list-item__folder" src="img/folder.png" alt="folder">'+
+                '<span>' + data.name + '</span></div>' +
+                '<div class="list-item__items">';
             
-            data.items.forEach(item => {
-                if (item.hasChildren) 
-                    elParent+= this.renderParent(item);
+            data.items.forEach(i => {
+                if (i.hasChildren) 
+                    parent+= this.renderParent(i);
                 else
-                    elParent+= this.renderChildren(item.name);
+                    parent+= this.renderChildren(i.name);
             });
+            parent += '</div> </div>';
+            return parent
         }
 
-        this.renderChildren = function (data) {
+        this.renderChildren = function (name) {
             //вовзращает рендер элемента без вложенности
-            let span = '<span>' + data.name + '</span>';
-            let elChild ='<div class="list-item__inner">' +
-            '<img class="list-item__folder" src="img/folder.png" alt="folder">'+ span + '</div>';
-            return elChild;
+            return '<div class="list-item__inner">'+
+                '<img class="list-item__folder" src="img/folder.png" alt="folder">'+
+                '<span>' + name + '</span></div>';;
         }
 
         this.toggleItems = function (parent) {
             parent.classList.toggle('list-item_open')
         }
-
-/*        this.renderTest = function (data) {
-            return `
-            <div class="test">${data.name}</div>
-            `
-        }*/
     }
-
 }
