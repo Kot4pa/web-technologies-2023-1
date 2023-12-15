@@ -71,14 +71,11 @@ function init() {
         ]
     }
 
-
     const items = new ListItems(document.getElementById('list-items'), data)
 
 
-  /*  items.render()*/
+    items.render()
     items.init()
-
-    /*console.log(items.renderTest(data));*/
 
     function ListItems(el, data) {
         this.el = el;
@@ -103,11 +100,26 @@ function init() {
             //если hasChildren, то запускаем renderParent
             //если !hasChildren, то запускаем renderChildren
             //возвращает рендер родительского элемента
-
+            let span = '<span>' + data.name + '</span>';
+            let elParent = '<div class="list-item list-item_open" data-parent><div class="list-item__inner">';
+            elParent += '<img class="list-item__arrow" src="img/chevron-down.png" alt="chevron-down" data-open>' +
+                '<img class="list-item__folder" src="img/folder.png" alt="folder">' + span + '</div>' +
+            '<div class="list-item__items">';
+            
+            data.items.forEach(item => {
+                if (item.hasChildren) 
+                    elParent+= this.renderParent(item);
+                else
+                    elParent+= this.renderChildren(item.name);
+            });
         }
 
         this.renderChildren = function (data) {
             //вовзращает рендер элемента без вложенности
+            let span = '<span>' + data.name + '</span>';
+            let elChild ='<div class="list-item__inner">' +
+            '<img class="list-item__folder" src="img/folder.png" alt="folder">'+ span + '</div>';
+            return elChild;
         }
 
         this.toggleItems = function (parent) {
