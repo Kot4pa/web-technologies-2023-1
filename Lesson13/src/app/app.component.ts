@@ -12,7 +12,6 @@ import { PizzaSizeService } from './services/PizzaSize.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
-  title = 'js-13';
   data = pizzas;
   selectedPizza : Pizza;
   isPizzaSelected = false;

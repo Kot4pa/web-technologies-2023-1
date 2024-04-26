@@ -25,25 +25,6 @@ export class Pizza{
         this.toppings.push(topping);
     }
 
-    removeTopping(topping : Topping){
-        const index = this.toppings.findIndex(e => e == topping);
-        this.toppings.splice(index, 1);
-    }
-
-    getToppings(){
-        return this.toppings.map(element =>
-            element.name
-        );
-    }
-
-    getSize(){
-        return this.size;
-    }
-
-    getStuffing(){
-        return this.stuff;
-    }
-
     calculatePrice(){
         let result = this.price;
         this.toppings.forEach(element =>{
