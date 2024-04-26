@@ -1,12 +1,12 @@
-p{
-    font-size: 30px;
+.con-pizzas-calculator{
+    display: flex;
+    gap: 30px;
 }
-.pizzaDiv{
-    display: inline-block;
-    text-align: center;
-    margin: 50px 10px 0px;
+
+.con-pizzas{
+    display: flex;
 }
-.pizzaImg{
-    width: 200px;
-    height: 200px;
+.con-calculator{
+    background-color: #fcfcfc;
+    padding: 50px;
 }
