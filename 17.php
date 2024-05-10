@@ -13,80 +13,64 @@ echo "<h2>пункт 1</h2>";
 function makeSMTH($a, $b)
 {
     if ($a >= 0 && $b >= 0){
-        echo "<h2>$a-$b</h2>>";
+        $res = $a-$b;
+        echo "<h2>$res</h2>>";
     }
     elseif ($a < 0 && $b < 0){
-        echo "<h2>$a*$b</h2>";
+        $res = $a*$b;
+        echo "<h2>$res</h2>";
     }
     else{
-        echo "<h2>$a+$b</h2>";
+        $res = $a+$b;
+        echo "<h2>$res</h2>";
     }
 }
 $a = 1;
-$b = 6;
+$b = 2;
 makeSMTH($a, $b);
 
 
 echo "<h2>пункт 2</h2>";
 
 $a = mt_rand(0, 16);
-switch ($a){
+switch ($a) {
     case 0:
-        echo 0;
-        break;
+        echo "0\n";
     case 1:
-        echo 1;
-        break;
+        echo "1\n";
     case 2:
-        echo 2;
-        break;
+        echo "2\n";
     case 3:
-        echo 3;
-        break;
+        echo "3\n";
     case 4:
-        echo 4;
-        break;
+        echo "4\n";
     case 5:
-        echo 5;
-        break;
+        echo "5\n";
     case 6:
-        echo 6;
-        break;
+        echo "6\n";
     case 7:
-        echo 7;
-        break;
+        echo "7\n";
     case 8:
-        echo 8;
-        break;
+        echo "8\n";
     case 9:
-        echo 9;
-        break;
+        echo "9\n";
     case 10:
-        echo 10;
-        break;
+        echo "10\n";
     case 11:
-        echo 11;
-        break;
+        echo "11\n";
     case 12:
-        echo 12;
-        break;
+        echo "12\n";
     case 13:
-        echo 13;
-        break;
+        echo "13\n";
     case 14:
-        echo 14;
-        break;
+        echo "14\n";
     case 15:
-        echo 15;
+        echo "15\n";
         break;
-    default:
-        echo 'Число от 0 до 15';
 }
 echo "<br>";
 
-
-
-
+//Пункт3
 function sum($a, $b)
 {
     return $a + $b;
@@ -95,13 +79,13 @@ function difference($a, $b)
 {
     return $a - $b;
 }
-function multiply($a, $b)
+function multiplication($a, $b)
 {
     return $a * $b;
 }
-function divide($a, $b)
+function division($a, $b)
 {
-    return $a + $b;
+    return $a / $b;
 }
 
 
@@ -114,26 +98,24 @@ function mathOperation($arg1, $arg2, $operation){
         case 'разность':
             return difference($arg1,$arg2);
         case 'умножение':
-            return multiply($arg1,$arg2);
+            return multiplication($arg1,$arg2);
         case 'деление':
-            return divide($arg1,$arg2);
+            return division($arg1,$arg2);
         default:
             return "Операция не определена!";
     }
 }
-
 $result_operation = mathOperation(10, 10, "умножение");
-
 echo "<h2>$result_operation</h2>";
 
-echo "<h2>пункт 5</h2>";
 
-$first_way = date('Y');
-echo "Способ 1: <h2>$first_way</h2>";
-$second_way = localtime(null, true)['tm_year'] + 1900;
-echo "Способ 2: <h2>$second_way</h2>";
-$third_way = getdate()['year'];
-echo "Способ 3: <h2>$third_way</h2>";
+echo "<h2>пункт 5</h2>";
+$one = date('Y');
+echo "Способ 1: <h2>$one</h2>";
+$two = localtime(null, true)['tm_year'] + 1900;
+echo "Способ 2: <h2>$two</h2>";
+$three = getdate()['year'];
+echo "Способ 3: <h2>$three</h2>";
 
 echo "<h2>пункт 6</h2>";
 function power($val, $pow)
