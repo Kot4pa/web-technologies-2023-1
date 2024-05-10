@@ -1,33 +1,33 @@
 <?php
 date_default_timezone_set('Asia/Yekaterinburg');
 $title = 'php-16';
-$content_h1 = "Заголовок для тега h1 главной страницы";
-function getCorrectFormatTime($current_time): string
+$h1 = "Заголовок для тега h1 главной страницы";
+function getCorrectFormatTime($time): string
 {
-    $current_hour = $current_time['tm_hour'];
-    $current_min = $current_time['tm_min'];
+    $hour = $time['tm_hour'];
+    $min = $time['tm_min'];
 
-    if($current_hour>4 && $current_hour < 21){
-        $hour_ps = 'часов';
+    if($hour>4 && $hour < 21){
+        $str_hour = 'часов';
     }
-    elseif ($current_hour%10==1){
-        $hour_ps = 'час';
+    elseif ($hour%10==1){
+        $str_hour = 'час';
     }
     else{
-        $hour_ps = 'часа';
+        $str_hour = 'часа';
     }
 
-    if(($current_min>4 && $current_min < 21) || $current_min%10==0 || $current_min%10>4){
-        $min_ps = 'минут';
+    if(($min>4 && $min < 21) || $min%10==0 || $min%10>4){
+        $str_min = 'минут';
     }
-    elseif ($current_min%10==1){
-        $min_ps = 'минута';
+    elseif ($min%10==1){
+        $str_min = 'минута';
     }
     else{
-        $min_ps = 'минуты';
+        $str_min = 'минуты';
     }
 
-    return "$current_hour $hour_ps $current_min $min_ps";
+    return "$hour $str_hour $min $str_min";
 }
 ?>
 <!doctype html>
@@ -43,7 +43,7 @@ function getCorrectFormatTime($current_time): string
 <?php
 $current_time = localtime(time(), true);
 $result = getCorrectFormatTime($current_time);
-echo "<h1>$content_h1</h1>";
+echo "<h1>$h1</h1>";
 echo "<h2>$result</h2>";
 ?>
 </body>
